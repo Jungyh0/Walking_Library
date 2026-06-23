@@ -33,14 +33,14 @@ export default function SignupPage({ onSignupSuccess, onGoLogin }) {
     setError("");
 
     try {
-      const checkRes = await fetch(`http://localhost:8080/users?loginId=${loginId.trim()}`);
+      const checkRes = await fetch(`http://3.1.24.7:8080/users?loginId=${loginId.trim()}`);
       const existing = await checkRes.json();
       if (existing.length > 0) {
         setError("이미 사용 중인 아이디입니다.");
         return;
       }
 
-      const res = await fetch("http://localhost:8080/users", {
+      const res = await fetch("http://3.1.24.7:8080/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
