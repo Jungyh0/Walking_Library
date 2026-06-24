@@ -19,6 +19,18 @@ public class BookappApplication {
 
 	@Bean
 	CommandLineRunner init(BookRepository bookRepository, UserRepository userRepository, CommentRepository commentRepository, PasswordEncoder passwordEncoder) {
+
+	@Autowired
+    private BookService bookService;
+
+    @Test
+    void contextLoads() {
+    }
+
+    @Test
+    void testAdd() {
+        assertEquals(5, bookService.add(2, 3));
+    }
 		return args -> {
 			User u1 = new User();
 			u1.setLoginId("aaa");
