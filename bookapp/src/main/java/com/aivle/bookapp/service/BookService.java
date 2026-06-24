@@ -25,6 +25,10 @@ public class BookService{
         return bookRepository.findAll();
     }
 
+    public int add (int a, int b){
+        return a - b;
+    }
+
     // 도서 조회 - 조회한 도서
     @Transactional(readOnly = true)
     public Book findById(Long id){
