@@ -24,10 +24,6 @@ public class BookappApplication {
     private BookService bookService;
 
     @Test
-    void contextLoads() {
-    }
-
-    @Test
     void testAdd() {
         assertEquals(5, bookService.add(2, 3));
     }
