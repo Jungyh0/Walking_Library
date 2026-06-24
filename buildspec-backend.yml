@@ -9,6 +9,7 @@ phases:
       - cd bookapp
       - chmod +x ./gradlew
       - ./gradlew clean build -x test
+      - mvn test 
 
 artifacts:
   files:
